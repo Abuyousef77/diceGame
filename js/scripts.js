@@ -28,6 +28,7 @@ Player.prototype.roll = function() {
     }
 }
 
+//front-end logic
 Player.prototype.hold = function() {
   this.rollTotal += this.total;
   alert("Next Players Turn, score for this round is: " + this.total);
