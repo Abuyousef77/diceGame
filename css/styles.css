@@ -22,3 +22,11 @@ li {
 h3 {
   text-decoration: underline;
 }
+
+#player1score {
+  font-size: 50px;
+}
+
+#player2score {
+  font-size: 50px;
+}

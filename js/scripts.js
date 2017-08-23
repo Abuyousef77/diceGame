@@ -21,33 +21,32 @@ Player.prototype.roll = function() {
     if (roll === 1) {
       this.total = 0;
       alert("You rolled a 1, next players turn! Current Score:" + this.rollTotal);
-      return this.rollTotal;
     }
     else {
       this.total += roll;
-      alert("Turn Score: " + roll);
+      alert("You rolled: " + roll);
     }
 }
 
 Player.prototype.hold = function() {
   this.rollTotal += this.total;
+  alert("Next Players Turn, score for this round is: " + this.total);
   this.total = 0;
-  alert("Next Players Turn, your current score is: " + this.rollTotal);
 }
 
 $(document).ready(function() {
   $("form#prompt").submit(function(event) {
     event.preventDefault();
-    player1Input = $ ("input#newPlayer1").val();
-    player2Input = $ ("input#newPlayer2").val();
+    player1.player = $ ("input#newPlayer1").val();
+    player2.player = $ ("input#newPlayer2").val();
 
-    if (player1Input === "" || player2Input === "") {
+    if (player1.player === "" || player2.player === "") {
       alert("Please Enter a Name")
       return;
     } else {
       $(".game").show(800);
-      $("span#p1").append(player1Input);
-      $("span#p2").append(player2Input);
+      $("span#p1").append(player1.player);
+      $("span#p2").append(player2.player);
     }
   });
 
