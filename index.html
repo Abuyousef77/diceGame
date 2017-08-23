@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Dice Game</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="container">
+        <h1>Dice Game</h1>
+        <h2>Rules</h2>
+        <ul>
+          <li>Each Player takes turns rolling a dice</li>
+          <li>On your turn, if the number is 2-6 add that number to your point total</li>
+          <li>If you roll a 1 your turn is over and you lose all your points!</li>
+        </ul>
+
+        <form id="prompt">
+          <div class="form-group">
+             <label for="newPlayer1">Player 1: Enter Name</label>
+             <input type="text" class="form-control" id="newPlayer1">
+           </div>
+           <div class="form-group">
+             <label for="newPlayer2">Player 2: Enter Name</label>
+             <input type="text" class="form-control" id="newPlayer2">
+           </div><br />
+          <button type="submit" class="btn btn-primary" id="start">Game Start</button>
+        </form>
+      </div>
+    </div><br /><br />
+
+    <div class="col-sm-6" id="player1">
+      <h3>Player 1</h3>
+      <ul id="player1score"> Score:
+
+      </ul>
+        <h3>Roll the Dice</h3>
+        <button type="submit" class="btn btn-success" id="roll1">Roll</button>
+        <h3>Next Players Turn / Hold Score</h3>
+        <button type="submit" class="btn btn-warning" id="pass1">Pass</button>
+    </div>
+
+    <div class="col-sm-6" id="player2">
+      <h3>Player 2</h3>
+      <ul id="player2score"> Score:
+
+      </ul>
+      <h3>Roll the Dice</h3>
+      <button type="submit" class="btn btn-success" id="roll2">Roll</button>
+      <h3>Next Players Turn / Hold Score</h3>
+      <button type="submit" class="btn btn-warning" id="pass2">Pass</button>
+    </div>
+
+  </body>
+</html>
