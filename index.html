@@ -10,12 +10,13 @@
   <body>
     <div class="row">
       <div class="container">
-        <h1>Dice Game</h1>
+        <h1>Pig Dice</h1>
         <h2>Rules</h2>
         <ul>
           <li>Each Player takes turns rolling a dice</li>
           <li>On your turn, if the number is 2-6 add that number to your point total</li>
           <li>If you roll a 1 your turn is over and you lose all your points!</li>
+          <li>Blue Rolls First!</li>
         </ul>
 
         <form id="prompt">
@@ -32,27 +33,34 @@
       </div>
     </div><br /><br />
 
-    <div class="col-sm-6" id="player1">
-      <h3>Player 1</h3>
-      <ul id="player1score"> Score:
+    <div class="game">
+      <div class="col-sm-6" id="player1">
+        <div class="well" id="well1">
+          <h3><span id="p1"></span></h3>
+          <p>Score:</p>
+          <ul id="player1score">
 
-      </ul>
-        <h3>Roll the Dice</h3>
-        <button type="submit" class="btn btn-success" id="roll1">Roll</button>
-        <h3>Next Players Turn / Hold Score</h3>
-        <button type="submit" class="btn btn-warning" id="pass1">Pass</button>
+          </ul>
+          <h3>Roll the Dice</h3>
+          <button type="submit" class="btn btn-success" id="roll1">Roll</button>
+          <h3>Next Players Turn / Hold Score</h3>
+          <button type="submit" class="btn btn-warning" id="pass1">Pass</button>
+        </div>
+      </div>
+
+      <div class="col-sm-6" id="player2">
+        <div class="well" id="well2">
+          <h3><span id="p2"></span></h3>
+          <p>Score:</p>
+          <ul id="player2score">
+
+          </ul>
+          <h3>Roll the Dice</h3>
+          <button type="submit" class="btn btn-success" id="roll2">Roll</button>
+          <h3>Next Players Turn / Hold Score</h3>
+          <button type="submit" class="btn btn-warning" id="pass2">Pass</button>
+        </div>
+      </div>
     </div>
-
-    <div class="col-sm-6" id="player2">
-      <h3>Player 2</h3>
-      <ul id="player2score"> Score:
-
-      </ul>
-      <h3>Roll the Dice</h3>
-      <button type="submit" class="btn btn-success" id="roll2">Roll</button>
-      <h3>Next Players Turn / Hold Score</h3>
-      <button type="submit" class="btn btn-warning" id="pass2">Pass</button>
-    </div>
-
   </body>
 </html>

@@ -11,6 +11,14 @@ li {
   margin:auto
 }
 
-/*#player2 {
+.well {
+  text-align: inherit;
+}
+
+.game {
   display: none;
-}*/
+}
+
+h3 {
+  text-decoration: underline;
+}

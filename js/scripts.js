@@ -11,16 +11,16 @@ function Random (min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-var player1 = new Player("Player1", 0, 0);
-var player2 = new Player("Player2", 0, 0);
+var player1 = new Player("", 0, 0);
+var player2 = new Player("", 0, 0);
+
 
 Player.prototype.roll = function() {
   roll = Random(1,6);
   console.log(roll);
     if (roll === 1) {
       this.total = 0;
-      alert("Turn over, Current Score:" + this.rollTotal);
-      // $("Player1", "Player2").toggle();
+      alert("You rolled a 1, next players turn! Current Score:" + this.rollTotal);
       return this.rollTotal;
     }
     else {
@@ -32,32 +32,42 @@ Player.prototype.roll = function() {
 Player.prototype.hold = function() {
   this.rollTotal += this.total;
   this.total = 0;
-  alert("Current Score: " + this.rollTotal);
-  // $("Player1", "Player2").toggle();
+  alert("Next Players Turn, your current score is: " + this.rollTotal);
 }
 
 $(document).ready(function() {
-  $("#roll1").click(function(event) {
+  $("form#prompt").submit(function(event) {
     event.preventDefault();
+    player1Input = $ ("input#newPlayer1").val();
+    player2Input = $ ("input#newPlayer2").val();
+
+    if (player1Input === "" || player2Input === "") {
+      alert("Please Enter a Name")
+      return;
+    } else {
+      $(".game").show(800);
+      $("span#p1").append(player1Input);
+      $("span#p2").append(player2Input);
+    }
+  });
+
+  $("#roll1").click(function(event) {
     player1.roll();
-    // $("ul#player1score").empty();
-    // $('ul#player1score').append(this.total);
   });
 
   $("#pass1").click(function(event) {
-    event.preventDefault();
     player1.hold();
-    var score = parseInt(player1.rollTotal)
-    $('ul#player1score').append(score);
+    var score = (player1.rollTotal)
+    $('ul#player1score').text(score);
   });
 
   $("#roll2").click(function(event) {
-    event.preventDefault();
     player2.roll();
   });
 
   $("#pass2").click(function(event) {
-    event.preventDefault();
     player2.hold();
+    var score = (player2.rollTotal)
+    $('ul#player2score').text(score);
   });
 });
